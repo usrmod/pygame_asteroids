@@ -5,8 +5,14 @@ from constants import *  # noqa: F403
 
 
 class Player(CircleShape):
-    def __init__(self, x, y, radius):
-        super().__init__(x, y, radius)
+    # def __init__(self, x, y, radius):
+    #     super().__init__(x, y, radius)
+
+    # def __init__(self, x, y):
+    #     super().__init__(x, y, PLAYER_RADIUS)
+
+    def __init__(self, x, y):
+        super().__init__(x, y, PLAYER_RADIUS)
 
         # self.x = x
         # self.y = y
@@ -29,7 +35,9 @@ class Player(CircleShape):
 
     def rotate(self, dt):
         rotation_amount = PLAYER_TURN_SPEED * dt
-        self.rotate = +rotation_amount
+        # self.rotate += rotation_amount
+
+        self.rotation += rotation_amount
         # self.rotate = +(PLAYER_TURN_SPEED * dt)
 
     def update(self, dt):
