@@ -1,7 +1,7 @@
 import pygame
 
 from circleshape import CircleShape
-from constants import *
+from constants import *  # noqa: F403
 
 
 class Player(CircleShape):
@@ -28,7 +28,9 @@ class Player(CircleShape):
         pygame.draw.polygon(screen, "white", self.triangle(), 2)
 
     def rotate(self, dt):
-        self.rotate = +PLAYER_TURN_SPEED * dt
+        rotation_amount = PLAYER_TURN_SPEED * dt
+        self.rotate = +rotation_amount
+        # self.rotate = +(PLAYER_TURN_SPEED * dt)
 
     def update(self, dt):
         keys = pygame.key.get_pressed()
