@@ -66,7 +66,7 @@ def main():
                 sys.exit("Game over!")
             for sho in shots:
                 if sho.colli(obj):
-                    obj.kill()
+                    obj.split()
                     sho.kill()
         screen.fill("black")
         # player.draw(screen)
