@@ -64,6 +64,10 @@ def main():
         for obj in asteroids:
             if obj.colli(player):
                 sys.exit("Game over!")
+            for sho in shots:
+                if sho.colli(obj):
+                    obj.kill()
+                    sho.kill()
         screen.fill("black")
         # player.draw(screen)
         for pl in drawable:
