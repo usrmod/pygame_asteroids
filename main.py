@@ -6,6 +6,7 @@ from asteroid import Asteroid
 from asteroidfield import AsteroidField
 from constants import *  # noqa: F403
 from player import Player
+from shot import Shot
 
 # print(getattr(pygame, "IS_CE", False))  # True means it's pygame-ce
 
@@ -41,6 +42,10 @@ def main():
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = updatable
     asteroid_field = AsteroidField()
+
+    shots = pygame.sprite.Group()
+    Shot.containers = (shots, updatable, drawable)
+
     # player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, PLAYER_RADIUS)
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
